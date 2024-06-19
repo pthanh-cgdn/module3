@@ -33,8 +33,12 @@ foreign key (product_id) references products(product_id)
 create table suppliers(
 id int primary key,
 name varchar(45),
-address varchar(255),
-phone_number varchar(45)
+address varchar(255)
+);
+create table supplier_phone_numbers(
+supplier_id int not null,
+phone_number varchar(45) primary key,
+foreign key (supplier_id) references suppliers(id)
 );
 create table orders(
 order_id int primary key,

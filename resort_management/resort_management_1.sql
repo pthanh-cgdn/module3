@@ -1,3 +1,4 @@
+create database resort_management;
 use resort_management;
 create table customer_types (
 customer_type_id int,
@@ -54,7 +55,8 @@ email varchar(45),
 address varchar(45),
 primary key (employee_id),
 foreign key (position_id) references positions (position_id),
-foreign key (degree_id) references degrees (degree_id)
+foreign key (degree_id) references degrees (degree_id),
+foreign key (department_id) references departments(department_id)
 );
 
 create table customers(
