@@ -1,34 +1,34 @@
 use quanlysinhvien;
 select
-	subid
+     subid
     ,subname
     ,credit
     ,status
 from subject
 where credit in 
 	(select
-		max(credit)
+	     max(credit)
 	from subject
 	);
 select
-	subid
+     subid
     ,subname
     ,credit
     ,status
 from subject
 where subid in 
-	(select
-		subid
+    (select
+	subid
     from mark
     where mark in 
-		(select
-			max(mark)
-		from mark
+	(select
+		max(mark)
+	from mark
         )
     );
 
 select
-	s.*
+     s.*
     ,avg(mark) as average_mark
 from mark m
 join student s
